@@ -2,7 +2,7 @@
 //  GroupA4ProjectTests.swift
 //  GroupA4ProjectTests
 //
-//  Created by Melanie Trinh on 2023-07-19.
+//  Created by Hillary Trinh on 2023-07-19.
 //
 
 import XCTest

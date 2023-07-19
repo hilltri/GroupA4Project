@@ -14,6 +14,9 @@
 		5EFE10462A6825CD00A46F7D /* GroupA4ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE10452A6825CD00A46F7D /* GroupA4ProjectTests.swift */; };
 		5EFE10502A6825CD00A46F7D /* GroupA4ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE104F2A6825CD00A46F7D /* GroupA4ProjectUITests.swift */; };
 		5EFE10522A6825CD00A46F7D /* GroupA4ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE10512A6825CD00A46F7D /* GroupA4ProjectUITestsLaunchTests.swift */; };
+		5EFE105F2A682DF000A46F7D /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE105E2A682DF000A46F7D /* LocationSearch.swift */; };
+		5EFE10612A682E1D00A46F7D /* AllEventsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE10602A682E1D00A46F7D /* AllEventsPage.swift */; };
+		5EFE10632A682E4300A46F7D /* EventDescriptionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE10622A682E4300A46F7D /* EventDescriptionPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		5EFE104B2A6825CD00A46F7D /* GroupA4ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupA4ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFE104F2A6825CD00A46F7D /* GroupA4ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupA4ProjectUITests.swift; sourceTree = "<group>"; };
 		5EFE10512A6825CD00A46F7D /* GroupA4ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupA4ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5EFE105E2A682DF000A46F7D /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
+		5EFE10602A682E1D00A46F7D /* AllEventsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsPage.swift; sourceTree = "<group>"; };
+		5EFE10622A682E4300A46F7D /* EventDescriptionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				5EFE10342A6825CC00A46F7D /* GroupA4ProjectApp.swift */,
 				5EFE10362A6825CC00A46F7D /* ContentView.swift */,
+				5EFE105E2A682DF000A46F7D /* LocationSearch.swift */,
+				5EFE10602A682E1D00A46F7D /* AllEventsPage.swift */,
+				5EFE10622A682E4300A46F7D /* EventDescriptionPage.swift */,
 				5EFE10382A6825CD00A46F7D /* Assets.xcassets */,
 				5EFE103A2A6825CD00A46F7D /* Preview Content */,
 			);
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EFE10372A6825CC00A46F7D /* ContentView.swift in Sources */,
+				5EFE10612A682E1D00A46F7D /* AllEventsPage.swift in Sources */,
+				5EFE105F2A682DF000A46F7D /* LocationSearch.swift in Sources */,
 				5EFE10352A6825CC00A46F7D /* GroupA4ProjectApp.swift in Sources */,
+				5EFE10632A682E4300A46F7D /* EventDescriptionPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
