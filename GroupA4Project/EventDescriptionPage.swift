@@ -24,7 +24,7 @@ struct EventDescriptionPage: View {
     @State private var resource2 = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 ZStack {
                     Color(.gray)
