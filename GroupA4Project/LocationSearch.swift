@@ -15,6 +15,15 @@ struct LocationSearch: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 VStack{
+                    HStack {
+                        NavigationLink(destination: ContentView()) {
+                            Image("back")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .background(.white)
+                        }
+                    Spacer()
+                    }
                     Text("Click on your location!")
                             .font(.title)
                             .fontWeight(.bold)
@@ -34,6 +43,7 @@ struct LocationSearch: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

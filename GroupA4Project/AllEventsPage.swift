@@ -84,6 +84,7 @@ struct AllEventsPage: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
