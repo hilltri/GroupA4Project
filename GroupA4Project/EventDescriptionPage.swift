@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EventDescriptionPage: View {
-    @State private var event = 2
+    @State private var event = 0
     
     @State private var locations = ["Southern Hemisphere", "Northern Hemisphere", "Earth"]
     @State private var events = ["Mercury at Greatest Elongation East", "Perseid Meteors", "Saturn at Opposition"]
@@ -51,7 +51,7 @@ struct EventDescriptionPage: View {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 10) {
                                         Text(events[event])
-                                            .font(.largeTitle)
+                                            .font(.title)
                                             .fontWeight(.semibold)
                                         Text(dates[event])
                                     }
@@ -59,11 +59,13 @@ struct EventDescriptionPage: View {
                                     .frame(alignment: .leading)
                                     Spacer()
                                 }
+                                Spacer()
+                                    .frame(height: 20)
                                 Image("compass\(event)")
                                     .resizable()
-                                    .frame(width: 180, height: 170)
+                                    .frame(width: 150, height: 145)
                                 Spacer()
-                                    .frame(height: 10)
+                                    .frame(height: 30)
                             }
                         }
                         
@@ -78,7 +80,7 @@ struct EventDescriptionPage: View {
                                     else {
                                         description = "" }
                                 }
-                                .font(.title2)
+                                .font(.title3)
                                 .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                             }
                             Text(description)
@@ -93,7 +95,7 @@ struct EventDescriptionPage: View {
                                     else {
                                         factor = "" }
                                 }
-                                .font(.title2)
+                                .font(.title3)
                                 .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                             }
                             Text(factor)
@@ -111,7 +113,7 @@ struct EventDescriptionPage: View {
                                         resource2 = ""
                                     }
                                 }
-                                .font(.title2)
+                                .font(.title3)
                                 .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                             }
                             Link("\(resource1)", destination: URL(string: resources[event])!)

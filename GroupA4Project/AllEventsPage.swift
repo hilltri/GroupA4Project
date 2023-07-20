@@ -11,70 +11,73 @@ struct AllEventsPage: View {
     var body: some View {
         NavigationStack {
             VStack {
+                HStack {
+                    NavigationLink(destination: ContentView()) {
+                        Image("back")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .offset(x: 20)
+                    }
+                    Spacer()
+                }
                 Text("All Astronomical Events")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
-                
                 VStack{
-                    
                     NavigationLink(destination: EventDescriptionPage()) {
-                        GroupBox("Mercury at Greatest Elongation East")
-                        {
+                        GroupBox {
+                            Text("Mercury at Greatest Elongation East")
+                                .fontWeight(.bold)
                             HStack {
                                 Image("0")
                                     .resizable(resizingMode: .stretch)
                                     .aspectRatio(contentMode: .fit)
                                 VStack{
-                                    Text("Southern Hemisphere: West 08/09/23: Shortly after sunset")
+                                    Text("Southern Hemisphere\nAugust 9, 2023")
                                         .lineSpacing(6.0)
                                 }
                             }
                         }
                         .padding()
-                        .font(.headline)
-                        .fontWeight(.regular)
                         .foregroundColor(Color.black)
                         .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                     }
-                    
-                    
+
                     NavigationLink(destination: EventDescriptionPage()) {
-                        GroupBox("Perseid Meteors")
-                        {
+                        GroupBox {
+                            Text("Perseid Meteors")
+                                .fontWeight(.bold)
                             HStack {
                                 Image("1")
                                     .resizable(resizingMode: .stretch)
                                     .aspectRatio(contentMode: .fit)
                                 VStack{
-                                    Text("Northern Hemisphere: Northeast        08/13/23: Midnight")
-                                        .lineSpacing(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
+                                    Text("Northern Hemisphere\nAugust 13, 2023")
+                                        .lineSpacing(6.0)
                                 }
                             }
                         }
-                        .padding(.horizontal)
-                        .font(.headline)
-                        .fontWeight(.regular)
+                        .padding()
                         .foregroundColor(Color.black)
                         .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                     }
                     
                     NavigationLink(destination: EventDescriptionPage()) {
-                        GroupBox("Saturn at Opposition")
-                        {
+                        GroupBox {
+                            Text("Saturn at Opposition")
+                                .fontWeight(.bold)
                             HStack {
                                 Image("2")
                                     .resizable(resizingMode: .stretch)
                                     .aspectRatio(contentMode: .fit)
                                 VStack{
-                                    Text("East                                       08/26/23: Overnight")
-                                        .lineSpacing(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
+                                    Text("Earth\nAugust 26 to 27, 2023")
+                                        .lineSpacing(6.0)
                                 }
                             }
                         }
                         .padding()
-                        .font(.headline)
-                        .fontWeight(.regular)
                         .foregroundColor(Color.black)
                         .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                     }
