@@ -22,8 +22,10 @@ struct LocationSearch: View {
                                 .frame(width: 30, height: 30)
                                 .background(.white)
                         }
-                    Spacer()
+                        
+                        
                     }
+                    .padding(.trailing, 340.0)
                     Text("Click on your location!")
                             .font(.title)
                             .fontWeight(.bold)
