@@ -10,7 +10,6 @@ import SwiftUI
 struct AllEventsPage: View {
 
     @Binding var location: Int
-    @State var event = 0
 
     var body: some View {
         NavigationStack {
@@ -34,32 +33,46 @@ struct AllEventsPage: View {
                         .fontWeight(.bold)
                         .padding()
                     VStack{
-                        NavigationLink(destination: EventDescriptionPage(location: $location, event: $event)) {
+                        NavigationLink(destination: EventDescriptionPage(location: $location)) {
                             GroupBox {
+                                if location == 0 || location == 2 {
                                     Text("Mercury at Greatest Elongation East")
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("Blue"))
-                                    HStack {
-                                        Image("0")
-                                            .resizable(resizingMode: .stretch)
-                                            .aspectRatio(contentMode: .fit)
-                                        VStack{
-                                            Text("Southern Hemisphere\nAugust 9, 2023")
-                                                .lineSpacing(6.0)
-                                                .foregroundColor(Color("Green Blue"))
-                                        }
+                                }
+                                if location == 1 {
+                                    Text("Mercury at Greatest Elongation East")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color("Green Blue"))
+                                }
+                                HStack {
+                                    Image("0")
+                                        .resizable(resizingMode: .stretch)
+                                        .aspectRatio(contentMode: .fit)
+                                    VStack{
+                                        Text("Southern Hemisphere\nAugust 9, 2023")
+                                            .lineSpacing(6.0)
+                                            .foregroundColor(Color("Green Blue"))
                                     }
                                 }
+                            }
                             .padding()
                             .foregroundColor(Color.black)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         }
                         
-                        NavigationLink(destination: EventDescriptionPage(location: $location, event: $event)) {
+                        NavigationLink(destination: EventDescriptionPage2(location: $location)) {
                             GroupBox {
-                                Text("Perseid Meteors")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color("Blue"))
+                                if location == 0 || location == 1 {
+                                    Text("Perseid Meteors")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color("Blue"))
+                                }
+                                if location == 2 {
+                                    Text("Perseid Meteors")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color("Green Blue"))
+                                }
                                 HStack {
                                     Image("1")
                                         .resizable(resizingMode: .stretch)
@@ -76,7 +89,7 @@ struct AllEventsPage: View {
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         }
                         
-                        NavigationLink(destination: EventDescriptionPage(location: $location, event: $event)) {
+                        NavigationLink(destination: EventDescriptionPage3(location: $location)) {
                             GroupBox {
                                 Text("Saturn at Opposition")
                                     .fontWeight(.bold)

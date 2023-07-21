@@ -1,16 +1,16 @@
 //
-//  EventDescriptionPage.swift
+//  EventDescriptionPage2.swift
 //  GroupA4Project
 //
-//  Created by Hillary Trinh on 2023-07-19.
+//  Created by AnnEEE on 2023-07-21.
 //
 
 import SwiftUI
 
-struct EventDescriptionPage: View {
+struct EventDescriptionPage2: View {
     
     @Binding var location: Int
-    @State private var event = 0
+    @State private var event = 1
     
     @State private var locations = ["Southern Hemisphere", "Northern Hemisphere", "Earth"]
     @State private var events = ["Mercury at Greatest Elongation East", "Perseid Meteors", "Saturn at Opposition"]
@@ -89,7 +89,6 @@ struct EventDescriptionPage: View {
                                 }
                                 .font(.title3)
                                 .foregroundColor(Color("Blue"))
-                                .fontWeight(.bold)
                             }
                             Text(description)
                                 .foregroundColor(Color("Beige"))
@@ -106,7 +105,6 @@ struct EventDescriptionPage: View {
                                 }
                                 .font(.title3)
                                 .foregroundColor(Color("Blue"))
-                                .fontWeight(.bold)
                             }
                             Text(factor)
                                 .multilineTextAlignment(.center)
@@ -126,7 +124,6 @@ struct EventDescriptionPage: View {
                                 }
                                 .font(.title3)
                                 .foregroundColor(Color("Blue"))
-                                .fontWeight(.bold)
                             }
                             Link("\(resource1)", destination: URL(string: resources[event])!)
                             Link("\(resource2)", destination: URL(string: resources[event + 1])!)
@@ -144,12 +141,12 @@ struct EventDescriptionPage: View {
     }
 }
 
-struct EventDescriptionPage_Previews: PreviewProvider {
+struct EventDescriptionPage2_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            EventDescriptionPage(location: .constant(0))
-            EventDescriptionPage(location: .constant(1))
-            EventDescriptionPage(location: .constant(2))
+            EventDescriptionPage2(location: .constant(0))
+            EventDescriptionPage2(location: .constant(1))
+            EventDescriptionPage2(location: .constant(2))
         }
     }
 }

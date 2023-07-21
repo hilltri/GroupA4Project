@@ -10,6 +10,7 @@ import SwiftUI
 struct LocationSearch: View {
     
     @Binding var location: Int
+    @State private var title = "Click on your location!"
     
     var body: some View {
         NavigationStack {
@@ -28,17 +29,22 @@ struct LocationSearch: View {
                 }
                 .offset(y: -350)
                 VStack {
-                    ZStack {
-                        Rectangle()
-                            .fill(Color("Dark Green"))
-                            .frame(width: 300, height: 30)
-                            .cornerRadius(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
-                        Text("Click on your location!")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("Blue"))
-                    }
                     NavigationLink(destination: AllEventsPage(location: $location)) {
+                        ZStack {
+                            Rectangle()
+                                .fill(Color("Dark Green"))
+                                .frame(width: 300, height: 30)
+                                .cornerRadius(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
+                            Text(title)
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("Blue"))
+                        }
+                    }
+                    Button {
+                        location = 1
+                        title = "See events near you >"
+                    } label: {
                         Image("N 1")
                             .resizable()
                             .frame(width: 450, height: 120)
@@ -46,7 +52,10 @@ struct LocationSearch: View {
                     }
                     Spacer()
                         .frame(height:0)
-                    NavigationLink(destination: AllEventsPage(location: $location)) {
+                    Button {
+                        location = 2
+                        title = "See events near you >"
+                    } label: {
                         Image("S 1")
                             .resizable()
                             .frame(width: 450, height: 120)
