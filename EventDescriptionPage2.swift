@@ -126,7 +126,9 @@ struct EventDescriptionPage2: View {
                                 .foregroundColor(Color("Blue"))
                             }
                             Link("\(resource1)", destination: URL(string: resources[event])!)
+                                .foregroundColor(Color("Beige"))
                             Link("\(resource2)", destination: URL(string: resources[event + 1])!)
+                                .foregroundColor(Color("Beige"))
                             Spacer()
                                 .frame(height: 35)
                         }
