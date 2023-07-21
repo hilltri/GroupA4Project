@@ -13,34 +13,40 @@ struct LocationSearch: View {
             ZStack {
                 Image("Galaxy Background")
                     .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                VStack{
+                VStack {
                     HStack {
                         NavigationLink(destination: ContentView()) {
                             Image("back")
                                 .resizable()
                                 .frame(width: 30, height: 30)
-                                .background(.white)
                         }
-                        
-                        
                     }
-                    .padding(.trailing, 340.0)
-                    Text("Click on your location!")
+                    .padding(.trailing, 300)
+                }
+                .offset(y: -350)
+                VStack {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color("Dark Green"))
+                            .frame(width: 300, height: 30)
+                            .cornerRadius(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
+                        Text("Click on your location!")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color("Blue"))
+                    }
                     NavigationLink(destination: AllEventsPage()) {
                         Image("N 1")
                             .resizable()
-                            .frame(width: 350, height: 130)
+                            .frame(width: 450, height: 120)
+                            .offset(x: -1)
                     }
                     Spacer()
                         .frame(height:0)
                     NavigationLink(destination: AllEventsPage()) {
                         Image("S 1")
                             .resizable()
-                            .frame(width: 350, height: 130)
+                            .frame(width: 450, height: 120)
                     }
                 }
             }

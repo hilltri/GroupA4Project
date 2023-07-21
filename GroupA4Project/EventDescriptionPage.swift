@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EventDescriptionPage: View {
-    @State private var event = 0
+    @State private var event = 2
     
     @State private var locations = ["Southern Hemisphere", "Northern Hemisphere", "Earth"]
     @State private var events = ["Mercury at Greatest Elongation East", "Perseid Meteors", "Saturn at Opposition"]
@@ -27,11 +27,11 @@ struct EventDescriptionPage: View {
         NavigationStack {
             ScrollView {
                 ZStack {
-                    Color(.gray)
+                    Color("Green Blue")
                         .ignoresSafeArea()
-                    VStack(spacing:15) {
+                    VStack(spacing: 15) {
                         ZStack {
-                            Color(.white)
+                            Color("Beige")
                             VStack {
                                 HStack {
                                     NavigationLink(destination: AllEventsPage()) {
@@ -43,7 +43,8 @@ struct EventDescriptionPage: View {
                                     Spacer()
                                 }
                                 Text(locations[event])
-                                    .fontWeight(.bold)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("Green Blue"))
                                 Image("\(event)")
                                     .resizable(resizingMode: .stretch)
                                     .aspectRatio(contentMode: .fit)
@@ -51,9 +52,11 @@ struct EventDescriptionPage: View {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 10) {
                                         Text(events[event])
-                                            .font(.title)
-                                            .fontWeight(.semibold)
+                                            .font(.largeTitle)
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(Color("Blue"))
                                         Text(dates[event])
+                                            .foregroundColor(Color("Green Blue"))
                                     }
                                     .padding(.horizontal)
                                     .frame(alignment: .leading)
@@ -63,13 +66,15 @@ struct EventDescriptionPage: View {
                                     .frame(height: 20)
                                 Image("compass\(event)")
                                     .resizable()
-                                    .frame(width: 150, height: 145)
+                                    .frame(width: 170, height: 155)
                                 Spacer()
-                                    .frame(height: 30)
+                                    .frame(height: 60)
                             }
+                            .offset(y: 40)
                         }
-                        
                         VStack {
+                            Spacer()
+                                .frame(height: 10)
                             HStack {
                                 Image("descriptions")
                                     .resizable()
@@ -81,9 +86,10 @@ struct EventDescriptionPage: View {
                                         description = "" }
                                 }
                                 .font(.title3)
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(Color("Blue"))
                             }
                             Text(description)
+                                .foregroundColor(Color("Beige"))
                                 .multilineTextAlignment(.center)
                             HStack {
                                 Image("factors")
@@ -96,10 +102,11 @@ struct EventDescriptionPage: View {
                                         factor = "" }
                                 }
                                 .font(.title3)
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(Color("Blue"))
                             }
                             Text(factor)
                                 .multilineTextAlignment(.center)
+                                .foregroundColor(Color("Beige"))
                             HStack {
                                 Image("resources")
                                     .resizable()
@@ -114,18 +121,19 @@ struct EventDescriptionPage: View {
                                     }
                                 }
                                 .font(.title3)
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(Color("Blue"))
                             }
                             Link("\(resource1)", destination: URL(string: resources[event])!)
                             Link("\(resource2)", destination: URL(string: resources[event + 1])!)
                             Spacer()
-                                .frame(height: 45)
+                                .frame(height: 35)
                         }
                         .padding()
                         
                     }
                 }
             }
+            .ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
     }

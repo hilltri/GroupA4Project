@@ -25,7 +25,7 @@ struct AllEventsPage: View {
                         Spacer()
                     }
                     Text("All Astronomical Events")
-                        .foregroundColor(Color("Beige"))
+                        .foregroundColor(Color("Dark Green"))
                         .font(.title)
                         .fontWeight(.bold)
                         .padding()
@@ -46,7 +46,6 @@ struct AllEventsPage: View {
                                         }
                                     }
                                 }
-                            
                             .padding()
                             .foregroundColor(Color.black)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)

@@ -15,35 +15,24 @@ struct ContentView: View {
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-                VStack{
+                VStack {
                     Spacer()
-                        .frame(height: 50)
+                        .frame(height: 40)
                         Text("Searching Beyond our Planet")
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                            .font(.title3)
+                            .fontWeight(.bold)
                             .foregroundColor(Color("Beige"))
-                            .padding(/*@START_MENU_TOKEN@*/.all, -5.0/*@END_MENU_TOKEN@*/)
-                            .frame(width: 325, height: /*@START_MENU_TOKEN@*/35.0/*@END_MENU_TOKEN@*/)
-                           
-                            .cornerRadius(/*@START_MENU_TOKEN@*/7.0/*@END_MENU_TOKEN@*/)
-                        
-                        
                             .toolbar {
                                 ToolbarItem(placement: .bottomBar) {
                                     NavigationLink(destination: AllEventsPage()) {
-                                        Text("   All Astronomical   Events")
+                                        Text("All Astronomical Events")
                                             .font(.headline)
                                             .fontWeight(.heavy)
                                             .foregroundColor(Color("Beige"))
-                                            .multilineTextAlignment(.center)
-                                            .frame(maxWidth: .infinity, alignment: .leadingLastTextBaseline)
                                             .frame(width: /*@START_MENU_TOKEN@*/175.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/75.0/*@END_MENU_TOKEN@*/)
                                             .background(Color("Green Blue"))
                                             .cornerRadius(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
-                                        
-                                        
                                     }
-                                    
                                 }
                                 ToolbarItem(placement: .bottomBar) {
                                     NavigationLink(destination: LocationSearch()) {
@@ -51,21 +40,19 @@ struct ContentView: View {
                                             .font(.headline)
                                             .fontWeight(.heavy)
                                             .foregroundColor(Color("Beige"))
-                                            .multilineTextAlignment(.center)
                                             .frame(width: /*@START_MENU_TOKEN@*/175.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/75.0/*@END_MENU_TOKEN@*/)
                                             .background(Color("Green Blue"))
                                             .cornerRadius(/*@START_MENU_TOKEN@*/6.0/*@END_MENU_TOKEN@*/)
-                                        
                                     }
                                     
                                 }
                             }
-                    }
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
-
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
