@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var location = 0
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -24,7 +27,7 @@ struct ContentView: View {
                             .foregroundColor(Color("Beige"))
                             .toolbar {
                                 ToolbarItem(placement: .bottomBar) {
-                                    NavigationLink(destination: AllEventsPage()) {
+                                    NavigationLink(destination: AllEventsPage(location: $location)) {
                                         Text("All Astronomical Events")
                                             .font(.headline)
                                             .fontWeight(.heavy)
@@ -35,7 +38,7 @@ struct ContentView: View {
                                     }
                                 }
                                 ToolbarItem(placement: .bottomBar) {
-                                    NavigationLink(destination: LocationSearch()) {
+                                    NavigationLink(destination: LocationSearch(location: $location)) {
                                         Text("Location Based Search")
                                             .font(.headline)
                                             .fontWeight(.heavy)

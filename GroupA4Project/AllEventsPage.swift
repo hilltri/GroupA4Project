@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AllEventsPage: View {
+
+    @Binding var location: Int
+    @State var event = 0
+
     var body: some View {
         NavigationStack {
             ZStack{
@@ -30,7 +34,7 @@ struct AllEventsPage: View {
                         .fontWeight(.bold)
                         .padding()
                     VStack{
-                        NavigationLink(destination: EventDescriptionPage()) {
+                        NavigationLink(destination: EventDescriptionPage(location: $location, event: $event)) {
                             GroupBox {
                                     Text("Mercury at Greatest Elongation East")
                                         .fontWeight(.bold)
@@ -51,7 +55,7 @@ struct AllEventsPage: View {
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         }
                         
-                        NavigationLink(destination: EventDescriptionPage()) {
+                        NavigationLink(destination: EventDescriptionPage(location: $location, event: $event)) {
                             GroupBox {
                                 Text("Perseid Meteors")
                                     .fontWeight(.bold)
@@ -72,7 +76,7 @@ struct AllEventsPage: View {
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         }
                         
-                        NavigationLink(destination: EventDescriptionPage()) {
+                        NavigationLink(destination: EventDescriptionPage(location: $location, event: $event)) {
                             GroupBox {
                                 Text("Saturn at Opposition")
                                     .fontWeight(.bold)
@@ -99,10 +103,14 @@ struct AllEventsPage: View {
         }
     }
 }
-    struct AllEventsPage_Previews: PreviewProvider {
-        static var previews: some View {
-            AllEventsPage()
+struct AllEventsPage_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            AllEventsPage(location: .constant(0))
+            AllEventsPage(location: .constant(1))
+            AllEventsPage(location: .constant(2))
         }
     }
+}
 
 

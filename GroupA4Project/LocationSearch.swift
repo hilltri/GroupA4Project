@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LocationSearch: View {
+    
+    @Binding var location: Int
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -35,7 +38,7 @@ struct LocationSearch: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color("Blue"))
                     }
-                    NavigationLink(destination: AllEventsPage()) {
+                    NavigationLink(destination: AllEventsPage(location: $location)) {
                         Image("N 1")
                             .resizable()
                             .frame(width: 450, height: 120)
@@ -43,7 +46,7 @@ struct LocationSearch: View {
                     }
                     Spacer()
                         .frame(height:0)
-                    NavigationLink(destination: AllEventsPage()) {
+                    NavigationLink(destination: AllEventsPage(location: $location)) {
                         Image("S 1")
                             .resizable()
                             .frame(width: 450, height: 120)
@@ -57,6 +60,10 @@ struct LocationSearch: View {
 
 struct LocationSearch_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearch()
+        Group {
+            AllEventsPage(location: .constant(0))
+            AllEventsPage(location: .constant(1))
+            AllEventsPage(location: .constant(2))
+        }
     }
 }

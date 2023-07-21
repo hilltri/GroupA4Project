@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct EventDescriptionPage: View {
-    @State private var event = 2
+    
+    @Binding var location: Int
+    @Binding var event: Int
     
     @State private var locations = ["Southern Hemisphere", "Northern Hemisphere", "Earth"]
     @State private var events = ["Mercury at Greatest Elongation East", "Perseid Meteors", "Saturn at Opposition"]
@@ -34,7 +36,7 @@ struct EventDescriptionPage: View {
                             Color("Beige")
                             VStack {
                                 HStack {
-                                    NavigationLink(destination: AllEventsPage()) {
+                                    NavigationLink(destination: AllEventsPage(location: $location)) {
                                         Image("back")
                                             .resizable()
                                             .frame(width: 30, height: 30)
@@ -141,6 +143,16 @@ struct EventDescriptionPage: View {
 
 struct EventDescriptionPage_Previews: PreviewProvider {
     static var previews: some View {
-        EventDescriptionPage()
+        Group {
+            EventDescriptionPage(location: .constant(0), event: .constant(0))
+            EventDescriptionPage(location: .constant(1), event: .constant(0))
+            EventDescriptionPage(location: .constant(2), event: .constant(0))
+            EventDescriptionPage(location: .constant(0), event: .constant(1))
+            EventDescriptionPage(location: .constant(1), event: .constant(1))
+            EventDescriptionPage(location: .constant(2), event: .constant(1))
+            EventDescriptionPage(location: .constant(0), event: .constant(2))
+            EventDescriptionPage(location: .constant(1), event: .constant(2))
+            EventDescriptionPage(location: .constant(2), event: .constant(2))
+        }
     }
 }
